@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Information Form</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Centering the form */
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header style */
+        h1 {
+            text-align: center;
+            color: #5D5C61;
+        }
+
+        /* Form label style */
+        label {
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        /* Input field style */
+        input[type="text"], input[type="date"], input[type="number"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        /* Button style */
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Form section style */
+        .form-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Voter Information Form</h1>
+        <form action="voters_submit.php" method="POST">
+            <div class="form-section">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" id="first_name" required>
+            </div>
+
+            <div class="form-section">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" id="last_name" required>
+            </div>
+
+            <div class="form-section">
+                <label for="middle_name">Middle Name:</label>
+                <input type="text" name="middle_name" id="middle_name">
+            </div>
+
+            <div class="form-section">
+                <label for="sex">Sex:</label><br>
+                <input type="checkbox" name="sex[]" value="Male"> Male
+                <input type="checkbox" name="sex[]" value="Female"> Female
+            </div>
+
+            <div class="form-section">
+                <label for="resident_address">Resident Address:</label><br>
+                Province: <input type="text" name="resident_address_province" required><br>
+                City: <input type="text" name="resident_address_city" required><br>
+                Barangay: <input type="text" name="resident_address_barangay" required><br>
+                House No: <input type="text" name="resident_address_house_no" required><br>
+            </div>
+
+            <div class="form-section">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" name="dob" required>
+            </div>
+
+            <div class="form-section">
+                <label for="pob">Place of Birth:</label><br>
+                City: <input type="text" name="pob_city" required><br>
+                Province: <input type="text" name="pob_province" required><br>
+            </div>
+
+            <div class="form-section">
+                <label for="citizenship">Citizenship:</label>
+                <select name="citizenship" id="citizenship" required>
+                    <option value="By Birth">By Birth</option>
+                    <option value="Naturalized">Naturalized</option>
+                    <option value="Reacquired">Reacquired</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="naturalized_date">Naturalization/Reacquisition Date (if applicable):</label>
+                <input type="date" name="naturalized_date">
+            </div>
+
+            <div class="form-section">
+                <label for="naturalized_years">Years of Naturalization/Reacquisition:</label>
+                <input type="number" name="naturalized_years" min="0">
+            </div>
+
+            <div class="form-section">
+                <label for="civil_status">Civil Status:</label>
+                <select name="civil_status" required>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Widow">Widow</option>
+                    <option value="Legally Separated">Legally Separated</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="spouse_name">Spouse's Name (if married):</label>
+                <input type="text" name="spouse_name">
+            </div>
+
+            <div class="form-section">
+                <label for="profession_occupation">Profession/Occupation:</label>
+                <input type="text" name="profession_occupation" required>
+            </div>
+
+            <div class="form-section">
+                <label for="father_name_last">Father's Last Name:</label>
+                <input type="text" name="father_name_last" required>
+            </div>
+
+            <div class="form-section">
+                <label for="father_name_first">Father's First Name:</label>
+                <input type="text" name="father_name_first" required>
+            </div>
+
+            <div class="form-section">
+                <label for="father_name_middle">Father's Middle Name:</label>
+                <input type="text" name="father_name_middle">
+            </div>
+
+            <div class="form-section">
+                <label for="mother_name_last">Mother's Last Name:</label>
+                <input type="text" name="mother_name_last" required>
+            </div>
+
+            <div class="form-section">
+                <label for="mother_name_first">Mother's First Name:</label>
+                <input type="text" name="mother_name_first" required>
+            </div>
+
+            <div class="form-section">
+                <label for="mother_name_middle">Mother's Middle Name:</label>
+                <input type="text" name="mother_name_middle">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
